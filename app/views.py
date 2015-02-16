@@ -1,11 +1,5 @@
-from flask import Flask
-from flask import request
-from flask import render_template
-from flask import redirect
-from flask import url_for
+from app import app
 import dataset
-
-app = Flask(__name__)
 
 # Connnect to database
 db = dataset.connect('sqlite:///file.db')
@@ -32,13 +26,14 @@ def submit():
     table.insert(signature)
     return redirect(url_for('guest_book'))
 
-
+'''
 def request(hostname):
-var http = require('http')
-setInterval(function () {
-  http.request({host: 'myapp.herokuapp.com', path: '/'}, function (resp) {
-    resp.on('data', console.log);
-  }).end()
-}, 1800000)
-
-app.run(debug=True)
+ //this is actually node but I threw it in here. sue me. 
+	var http = require('http'); 
+	setInterval(function () {
+	  http.request({host: 'myapp.herokuapp.com', path: '/'}, function (resp) {
+	    resp.on('data', console.log);
+	  }).end()
+	}, 1800000)
+	return True
+'''
